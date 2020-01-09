@@ -1,0 +1,22 @@
+{
+  "name": "test-01",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^6.0.1",
+    "react-scripts": "0.9.5",
+    "redux": "^1.0.0-rc",
+    "redux-form": "^8.2.4"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.5.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
