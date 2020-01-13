@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class FunctionButtons extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <React.Fragment>
-                <button className="btn-function btn-divide" onClick={() => this.props.func('/')}>&#247;</button>
-                <button className="btn-function btn-minus" onClick={() => this.props.func('-')}>-</button>
-                <button className="btn-function btn-plus" onClick={() => this.props.func('+')}>+</button>
-                <button className="btn-function btn-equals" onClick={() => this.props.func('=')}>=</button>
-            </React.Fragment>
-        );
-    }
+function FunctionButtons(props) {
+    return (
+        <React.Fragment>
+            <button className="btn-function btn-multiply" onClick={() => props.func('*')}>&#xD7;</button>
+            <button className="btn-function btn-divide" onClick={() => props.func('/')}>&#247;</button>
+            <button className="btn-function btn-minus" onClick={() => props.func('-')}>-</button>
+            <button className="btn-function btn-plus" onClick={() => props.func('+')}>+</button>
+            <button className="btn-function btn-equals" onClick={() => props.func('=')}>=</button>
+        </React.Fragment>
+    );
 }
+
+FunctionButtons.propTypes = {
+    func: PropTypes.func
+};
 
 export default FunctionButtons;

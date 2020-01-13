@@ -13,6 +13,12 @@ const CalculatorOperations = {
 }
 
 class Calculator extends React.Component {
+  /**
+  * @property {number} value Input digit
+  * @property {string} operator
+  * @property {string} displayValue
+  * @property {boolean} waitingForOperand
+  */
   state = {
     value: null,
     operator: null,
@@ -29,11 +35,14 @@ class Calculator extends React.Component {
     })
   }
 
+  /**
+  * @property {string} nextOperator
+  */
   performOperation = (nextOperator) => {
     const { value, displayValue, operator, waitingForOperand } = this.state;
     let inputValue = Number(displayValue);
 
-    if (value == null) {
+    if (value === null) {
       this.setState({
         value: inputValue
       })
@@ -54,12 +63,15 @@ class Calculator extends React.Component {
 
   }
 
+  /**
+  * @property {number} digit
+  */
   handleInputDigit = (digit) => {
     const { displayValue, waitingForOperand } = this.state;
 
     if (!waitingForOperand) {
       this.setState({
-        displayValue: (displayValue != "0" ? displayValue : '') + '' + digit,
+        displayValue: (displayValue !== 0 ? displayValue : '') + '' + digit,
       })
     } else {
       this.setState({
